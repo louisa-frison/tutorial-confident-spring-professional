@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Login</title>
+</head>
+<body>
+	<form th:action="@{/login}" th:object="${loginForm}" method="post">
+		<p>
+			Username: <input type="text" th:field="*{username}">
+		</p>
+		<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" >
+		<p>
+			Password: <input type="text" th:field="*{password}">
+		</p>
+		<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" >
+		<div th:if="${invalidCredentials}" style="background-color: red;">
+			Sorry, <span th:text="${loginForm.username}">[username]</span>, that
+			doesn't look like you!
+		</div>
+
+		<p>
+			<input type="submit" value="submit">
+		</p>
+	</form>
+</body>
+</html>

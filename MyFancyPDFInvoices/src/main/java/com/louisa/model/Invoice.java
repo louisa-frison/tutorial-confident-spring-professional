@@ -7,8 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Invoice {
 
     private String id; 
+    
     @JsonProperty("user_id")
     String userId;  
+    
     @JsonProperty("pdf_url")
     String pdfUrl;
 
