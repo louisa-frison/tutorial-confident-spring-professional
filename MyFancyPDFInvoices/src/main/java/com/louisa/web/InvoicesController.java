@@ -35,7 +35,7 @@ public class InvoicesController {
 		this.invoiceService = invoiceService;
 	}
 
-	@GetMapping("/invoices")
+	@GetMapping(value ="/invoices", produces = "application/json")
 	public List<Invoice> getAllInvoices() {
 		return invoiceService.findAll();
 	}
